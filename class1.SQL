@@ -29,3 +29,4 @@ INSERT INTO department VALUES ('1243', 'CyberSecurity', 16372, '19 March 2019');
 
 -- fetch some values
 SELECT * FROM employee WHERE gender = 'F';
+SELECT * FROM department WHERE manager_SSN = 16372;
