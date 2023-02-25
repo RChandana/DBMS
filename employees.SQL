@@ -28,4 +28,4 @@ SELECT count(DISTINCT emp_Name) FROM employees;
 SELECT emp_Name, Sum(salary), count(*) FROM employees group by (emp_Name);
 SELECT emp_Name, Sum(salary) FROM employees group by(emp_Name) having Sum(salary) > 120000;
 SELECT emp_Name FROM employees order by emp_Name desc;
-SELECT * FROM employees where emp_Name = "Anitha" and salary > 10000;
+SELECT * FROM employees where emp_Name = "Amit" and salary > 10000;
