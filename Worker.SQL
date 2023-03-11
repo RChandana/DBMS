@@ -1,5 +1,5 @@
 CREATE TABLE Worker (
-	WORKER_ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	WORKER_ID INT NOT NULL PRIMARY KEY,
 	FIRST_NAME CHAR(25),
 	LAST_NAME CHAR(25),
 	SALARY INT(15),
@@ -53,3 +53,34 @@ INSERT INTO Title
  (007, 'Executive', '2016-06-11 00:00:00'),
  (006, 'Lead', '2016-06-11 00:00:00'),
  (003, 'Lead', '2016-06-11 00:00:00');
+ 
+ 
+--Select * from Worker where FIRST_NAME in ('Vipul','Satish');
+--Select * from Worker where FIRST_NAME not in ('Vipul','Satish');
+--Select * from Worker where SALARY between 100000 and 500000;
+--Select * from Worker where year(JOINING_DATE) = 2014 and month(JOINING_DATE) = 2;
+--SELECT COUNT(*) FROM worker WHERE DEPARTMENT = 'Admin';
+
+--SELECT FIRST_NAME || ' ' || LAST_NAME As Worker_Name, Salary
+--FROM worker 
+--WHERE WORKER_ID IN 
+--(SELECT WORKER_ID FROM worker 
+--WHERE Salary BETWEEN 50000 AND 100000);
+
+--SELECT DEPARTMENT, count(WORKER_ID) No_Of_Workers 
+--FROM worker 
+--GROUP BY DEPARTMENT 
+--ORDER BY No_Of_Workers DESC;
+
+--SELECT DISTINCT W.FIRST_NAME, T.WORKER_TITLE
+--FROM Worker W
+--INNER JOIN Title T
+--ON W.WORKER_ID = T.WORKER_REF_ID
+--AND T.WORKER_TITLE in ('Manager');
+
+--SELECT * FROM Worker ORDER BY Salary DESC LIMIT 10;
+
+--SELECT Salary FROM Worker ORDER BY Salary DESC LIMIT 1,1;
+
+Select max(Salary) from Worker 
+where Salary not in (Select max(Salary) from Worker);
